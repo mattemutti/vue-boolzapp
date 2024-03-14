@@ -1,0 +1,456 @@
+/***********************************************
+RULE FOR ALL
+************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --bapp-prymary: #eaeaeaFF;
+    --bapp-bg-top: #009688FF;
+    --bapp-bg-bottom: #dbdbd3FF;
+    --bapp-bg-section: #eaeaeaFF;
+    --bapp-bg-sms: #d5f9baFF;
+    --bapp-light: #ffffffFF;
+    --bapp-txt-lighter: #6b7376FF;
+    --bapp-txt: #060606FF;
+    --bapp-search: #8edafcFF;
+    --bapp-border: rgba(128, 128, 128, 0.174);
+    --bapp-icons: #b1b1b1FF;
+
+}
+
+body {
+    background: linear-gradient(to top, var(--bapp-bg-bottom) 85%, var(--bapp-bg-top) 50%);
+}
+
+
+/***********************************************
+DEBUGT
+************************************************/
+
+
+
+/***********************************************
+UTILITIES
+************************************************/
+
+
+
+.container {
+
+    height: 95vh;
+    max-width: 1200px;
+    margin: 1rem auto 2rem;
+    display: flex;
+    overflow: hidden;
+}
+
+img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+a {
+    color: var(--bapp-txt-lighter);
+}
+
+.icons,
+.icons-r {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.icon-1,
+.icon-2,
+.icon-3,
+.icon-4,
+.icon-l,
+.icon-audio {
+    font-size: 120%;
+    color: var(--bapp-icons);
+}
+
+.users-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-user,
+.info-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    height: 70px;
+    border-bottom: 1px solid var(--bapp-border);
+}
+
+.hour-user {
+    height: 80%;
+
+}
+
+
+
+/***********************************************
+MAIN
+************************************************/
+
+#site_main {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/***********************************************
+Box Left
+************************************************/
+
+
+.box-l {
+    width: 350px;
+    height: 100%;
+}
+
+.info-account {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: var(--bapp-prymary);
+    padding: 0.5rem;
+    border-right: 1px solid var(--bapp-border);
+}
+
+.notify {
+    height: 70px;
+    background-color: var(--bapp-search);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+}
+
+.icon-4 {
+    border-radius: 50%;
+    color: var(--bapp-search);
+    background-color: var(--bapp-light);
+}
+
+.search {
+    height: 70px;
+    background-color: var(--bapp-prymary);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.box-src {
+    padding: 0.3rem;
+    padding-left: 2rem;
+    background-color: var(--bapp-light);
+    display: flex;
+    gap: 1rem;
+    color: var(--bapp-txt-lighter);
+    width: 95%;
+    align-items: center;
+    border: 1px solid var(--bapp-bg-top);
+    border-radius: 0.25rem;
+}
+
+
+.form-search {
+    width: 100%;
+
+    >input {
+        width: 100%;
+        padding: 0.5rem;
+        border: none;
+    }
+}
+
+.users {
+    background-color: var(--bapp-light);
+    height: calc(100% - 210px);
+    overflow-y: auto;
+}
+
+.txt-chat,
+.txt-chat-r,
+.hour-user {
+    color: var(--bapp-txt-lighter);
+}
+
+
+/***********************************************
+Box Right
+************************************************/
+
+
+.box-r {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+
+    >.contact,
+    >.digit {
+        height: 70px;
+    }
+
+
+    >.sms {
+        background-image: url(../img/mine.jpg);
+        height: calc(100% - 140px);
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        overflow-y: auto;
+        gap: 2rem;
+
+
+        &>div {
+            min-height: 140px;
+        }
+
+        >.send {
+            align-self: flex-end;
+            background-color: var(--bapp-bg-sms);
+            border-radius: 1rem;
+            display: flex;
+            max-width: 500px;
+
+            @media screen and (max-width: 991px) {
+
+                max-width: 400px;
+            }
+
+            @media screen and (max-width: 540px) {
+
+                max-width: 300px;
+            }
+
+
+        }
+
+        >.recive {
+            align-self: flex-start;
+            background-color: var(--bapp-light);
+            border-radius: 1rem;
+            display: flex;
+            max-width: 500px;
+
+            @media screen and (max-width: 991px) {
+
+                max-width: 400px;
+            }
+
+            @media screen and (max-width: 540px) {
+
+                max-width: 300px;
+            }
+
+        }
+    }
+
+
+    >.contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+
+
+    >.digit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+
+        >.sms-write {
+            color: var(--bapp-txt-lighter);
+            text-align: left;
+            width: 85%;
+
+            >input {
+                width: 100%;
+                height: 100%;
+                border: none;
+                padding: 0.8rem;
+                border-radius: 0.5rem;
+            }
+
+        }
+
+
+        @media (max-width: 540px) {
+
+            justify-content: center;
+
+            >.sms-write {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.icon-sms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.3rem;
+    text-align: right;
+    color: var(--bapp-txt-lighter);
+}
+
+.txt-sms {
+    padding: 0.3rem;
+}
+
+
+.contact,
+.digit {
+    background-color: var(--bapp-prymary);
+
+}
+
+
+
+/********************************
+Bonus
+**********************************/
+
+
+.menu {
+    list-style: none;
+    position: relative;
+}
+
+.icons {}
+
+.tendina {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    list-style: none;
+    background-color: var(--bapp-light);
+    padding: 1rem;
+    border: 1px solid var(--bapp-txt-lighter);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 180px;
+    box-shadow: 0px 2px 5px #655959;
+    display: none;
+
+    >li {
+        text-align: center;
+
+        .td-n {
+            text-decoration: none;
+
+        }
+    }
+
+}
+
+
+ul:hover .tendina {
+
+    display: flex;
+
+
+
+
+}
+
+
+
+/********************************
+End Bonus
+**********************************/
+
+
+
+/***********************************************
+MEDIA QUERY FIRST DESKTOP
+************************************************/
+
+
+
+/* ------LARGE-----------------------------*/
+
+@media screen and (max-width: 1440px) {}
+
+
+
+/* ------MEDIUM-----------------------------*/
+
+@media screen and (max-width: 991px) {
+
+
+
+
+    .container {
+        height: 100vh;
+        margin: 0;
+    }
+
+    .box-l {
+        width: 80px;
+    }
+
+
+    .notify,
+    .search {
+        display: none;
+    }
+
+    .users {
+        height: calc(100% - 70px);
+    }
+
+    .icons,
+    .column,
+    .hour-user {
+        display: none;
+    }
+
+    .card-user,
+    .info-account {
+        justify-content: center;
+    }
+
+}
+
+
+/* ------SMALL-----------------------------*/
+
+@media screen and (max-width: 540px) {
+
+    .box-l,
+    .icons-r,
+    .icon-l,
+    .icon-audio {
+        display: none;
+    }
+
+
+
+}
