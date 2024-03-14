@@ -231,6 +231,8 @@ Box Right
             background-color: var(--bapp-bg-sms);
             border-radius: 1rem;
             display: flex;
+            flex-direction: column;
+            margin: 1rem;
             max-width: 500px;
             padding: 0.5rem;
 

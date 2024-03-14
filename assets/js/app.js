@@ -174,18 +174,19 @@ createApp({
 			contacts,
 			countMessage: 0,
 			activeUser: null,
-
+			generatedUserMessage: null,
 		}
-	},
+	}, 
 
 	methods: {
 
-		conversationIndex(index) {
-			//console.log(index);
+		generateUserMessage(index) {
+			console.log(this.contacts[index]);
 			this.activeUser = index;
-			console.log(this.activeUser)
-			//console.log(this.contacts[this.activeUser].messages[0].message);;
+			//console.log(this.activeUser);
+			//console.log(this.contacts[this.activeUser].messages[0].message);
 
+			this.generatedUserMessage = this.contacts[index];
 		},
 		reedMessage() {
 			if (this.contacts[activeUser].messages[countMessage].status === 'sent') {

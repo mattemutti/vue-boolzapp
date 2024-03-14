@@ -65,7 +65,7 @@
                     <div class="users">
 
                         <ul>
-                            <li v-for="(contact, index) in contacts" @click="conversationIndex(index)">
+                            <li v-for="(contact, index) in contacts" @click="generateUserMessage(index)">
                                 <div class="card-user">
                                     <img class="photo-user" :src="'./assets/' + contact.avatar " alt="">
                                     <!-- user's photo -->
@@ -73,7 +73,7 @@
                                         <div class="name-user">{{contact.name}}</div>
                                         <div class="txt-chat">Lorem ipsum dolor sit amet</div>
                                     </div>
-                                    <!-- name contact end last message text -->                   
+                                    <!-- name contact end last message text -->
                                     <div class="hour-user">16.45</div>
                                     <!-- hour last sms -->
                                 </div>
@@ -114,15 +114,15 @@
 
 
                     <div class="sms">
-                        <div class="send" >     
-                            <div v-for="message in contacts[activeUser].messages">
+                        <div class="send" v-if="generatedUserMessage != null">
+                            <div v-for="message in generatedUserMessage.messages">
                                 <div class="txt_sended">
-                                    
+                                    {{message.message}}
                                 </div>
-                            </div>                   
-                            <div class="icon-sms">
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <!-- <div>{{contacts[activeUser].messages[countMessage].date}}</div> -->
+                                <div class="icon-sms">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <!-- <div>{{contacts[activeUser].messages[countMessage].date}}</div> -->
+                                </div>
                             </div>
                         </div>
 
