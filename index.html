@@ -65,9 +65,9 @@
                     <div class="users">
 
                         <ul>
-                            <li v-for="(contact, index) in contacts">
-                                <div class="card-user">
-                                    <img class="photo-user " :src="'./assets/' + contact.avatar " alt="">
+                            <li v-for="contact in contacts">
+                                <div class="card-user" @click="conversation()">
+                                    <img class="photo-user" :src="'./assets/' + contact.avatar " alt="">
                                     <!-- user's photo -->
                                     <div class="column">
                                         <div class="name-user">{{contact.name}}</div>
@@ -110,17 +110,13 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- /.contact -->
+                    <!-- /.info contact top -->
 
 
                     <div class="sms">
-                        <div class="send">
-                            <div class="txt_sended">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum eum autem ipsam, nam
-                                saepe
-                                id dolorem repudiandae vel nulla pariatur libero suscipit commodi. Voluptatem sunt
-                                nostrum
-                                minus amet rerum eius.
+                        <div class="send" >
+                            <div class="txt_sended" >
+                                {{contacts[activeMessage].messages[activeMessage].message}}
                             </div>
                             <div class="icon-sms">
                                 <i class="fa-solid fa-chevron-down"></i>

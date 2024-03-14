@@ -9,7 +9,7 @@ const contacts = [
 			{
 				date: '10/01/2020 15:30:55',
 				message: 'Hai portato a spasso il cane?',
-				status: 'sent'
+				status: 'sent',
 			},
 			{
 				date: '10/01/2020 15:50:00',
@@ -172,16 +172,26 @@ createApp({
 	data() {
 		return {
 			contacts,
+			activeMessage: 0,
 
 		}
 	},
 
-	method() {
+	methods: {
+
+		conversation() {
+			//console.log('we we funzia');
+		},
+		messageSended() {
+			if (this.contacts[index].messages[index].status === 'sent') {
+				console.log('seeeeeent');
+			}
+		}
 
 	},
 
 	mounted() {
-		console.log(contacts[0].avatar);
+		//console.log(contacts[0].messages[0].message);
 	}
 }).mount('#app')
 
