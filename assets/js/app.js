@@ -183,8 +183,8 @@ createApp({
 		conversationIndex(index) {
 			//console.log(index);
 			this.activeUser = index;
-			//console.log(this.activeUser)
-			console.log(this.contacts[this.activeUser].messages[0].message);;
+			console.log(this.activeUser)
+			//console.log(this.contacts[this.activeUser].messages[0].message);;
 
 		},
 		reedMessage() {
