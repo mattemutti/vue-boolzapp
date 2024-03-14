@@ -18,9 +18,6 @@
 <body class="debug">
     <div id="app">
 
-        {{message}}
-
-
         <main id="site_main">
             <div class="container">
 
@@ -43,7 +40,6 @@
                     </div>
                     <!-- /.info-account -->
 
-
                     <div class="notify">
                         <div class="icon-4"><i class="fa-solid fa-bell-slash"></i> </div>
                         <div class="txt-notify">
@@ -53,17 +49,13 @@
                     </div>
                     <!-- /.info-notify -->
 
-
                     <div class="search">
                         <div class="box-src">
-
                             <i class="fa-solid fa-magnifying-glass"></i>
-
                             <form class="form-search" action="" method="post">
                                 <input type="text" name="search-in" id="search-in"
                                     placeholder="Cerca o inizia una nuova chat">
                             </form>
-
                             <!-- <span>Cerca o inizia una nuova chat</span> -->
                         </div>
                     </div>
@@ -71,121 +63,24 @@
 
 
                     <div class="users">
-                        <div class="card-user">
 
-                            <img class="photo-user " src="./assets/img/avatar_1.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Michele</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">16.45</div>
-
-                        </div>
-                        <!-- utente -->
-
-                        <div class="card-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_2.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Fabio</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">16.30</div>
-
-                        </div>
-                        <!-- utente -->
-
-                        <div class="card-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_3.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Samuele</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">16.15</div>
-
-                        </div>
-                        <!-- utente -->
-
-                        <div class="card-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_4.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Alessandro B.</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">16.05</div>
-
-                        </div>
-                        <!-- utente -->
-
-                        <div class="card-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_5.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Alessandro L.</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">15.30</div>
-
-                        </div>
-                        <!-- utente -->
-
-                        <div class="card-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_6.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Alessia</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">15.27</div>
-
-                        </div>
-                        <!-- utente -->
-
-                        <div class="card-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_7.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Bobo</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">15.18</div>
-
-                        </div>
-                        <!-- utente -->
-
-                        <div class="card-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_8.jpg" alt="">
-
-                            <div class="column">
-                                <div class="name-user">Ruggero dei Timidi</div>
-                                <div class="txt-chat">Lorem ipsum dolor sit amet</div>
-                            </div>
-
-                            <div class="hour-user">15.00</div>
-
-                        </div>
-                        <!-- utente -->
-
-
+                        <ul>
+                            <li v-for="(contact, index) in contacts">
+                                <div class="card-user">
+                                    <img class="photo-user " :src="'./assets/' + contact.avatar " alt="">
+                                    <!-- user's photo -->
+                                    <div class="column">
+                                        <div class="name-user">{{contact.name}}</div>
+                                        <div class="txt-chat">Lorem ipsum dolor sit amet</div>
+                                    </div>
+                                    <!-- name contact end last message text -->                   
+                                    <div class="hour-user">16.45</div>
+                                    <!-- hour last sms -->
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- /.users -->
+                    <!-- /.contacts -->
 
                 </div>
                 <!-- chiusura contenitore principale left-->
