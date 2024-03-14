@@ -65,7 +65,7 @@
                     <div class="users">
 
                         <ul>
-                            <li v-for="(contact, index) in contacts" @click="conversation(index)">
+                            <li v-for="(contact, index) in contacts" @click="conversationIndex(index)">
                                 <div class="card-user" >
                                     <img class="photo-user" :src="'./assets/' + contact.avatar " alt="">
                                     <!-- user's photo -->
@@ -113,10 +113,10 @@
                     <!-- /.info contact top -->
 
 
-                    <div class="sms" v-for="contact in contacts" >
-                        <div class="send" >
-                            <div class="txt_sended" >
-                                {{contact.messages}}   
+                    <div class="sms">
+                        <div class="send" v-for="user in contacts[activeUser]">
+                            <div class="txt_sended">
+                                  {{user}}
                             </div>
                             <div class="icon-sms">
                                 <i class="fa-solid fa-chevron-down"></i>

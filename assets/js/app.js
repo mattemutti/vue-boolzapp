@@ -173,29 +173,18 @@ createApp({
 		return {
 			contacts,
 			countMessage: 0,
-			activeUser: 0,
+			activeUser: null,
 
 		}
 	},
 
 	methods: {
 
-		conversation(index) {
+		conversationIndex(index) {
 			//console.log(index);
 			this.activeUser = index;
-			console.log(this.activeUser);
-
-			if (this.contacts[index].messages[this.countMessage].status === 'sent') {
-				console.log(this.contacts[index].messages[this.countMessage].message);
-				this.countMessage++
-			} else {
-				console.log(this.contacts[index].messages[this.countMessage].message);
-				this.countMessage++
-			}
-
-			
-			
-
+			//console.log(this.activeUser)
+			console.log(this.contacts[this.activeUser].messages[0].message);;
 
 		},
 		reedMessage() {
@@ -210,6 +199,6 @@ createApp({
 		//console.log(contacts[0].messages[0].message);
 		//contacts[activeUser].messages
 	}
-}).mount('#app') 
+}).mount('#app')
 
 
