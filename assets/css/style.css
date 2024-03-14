@@ -232,6 +232,7 @@ Box Right
             border-radius: 1rem;
             display: flex;
             max-width: 500px;
+            padding: 0.5rem;
 
             @media screen and (max-width: 991px) {
 
@@ -252,6 +253,7 @@ Box Right
             border-radius: 1rem;
             display: flex;
             max-width: 500px;
+            padding: 0.5rem;
 
             @media screen and (max-width: 991px) {
 
