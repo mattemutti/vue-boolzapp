@@ -172,18 +172,34 @@ createApp({
 	data() {
 		return {
 			contacts,
-			activeMessage: 0,
+			countMessage: 0,
+			activeUser: 0,
 
 		}
 	},
 
 	methods: {
 
-		conversation() {
-			//console.log('we we funzia');
+		conversation(index) {
+			//console.log(index);
+			this.activeUser = index;
+			console.log(this.activeUser);
+
+			if (this.contacts[index].messages[this.countMessage].status === 'sent') {
+				console.log(this.contacts[index].messages[this.countMessage].message);
+				this.countMessage++
+			} else {
+				console.log(this.contacts[index].messages[this.countMessage].message);
+				this.countMessage++
+			}
+
+			
+			
+
+
 		},
-		messageSended() {
-			if (this.contacts[index].messages[index].status === 'sent') {
+		reedMessage() {
+			if (this.contacts[activeUser].messages[countMessage].status === 'sent') {
 				console.log('seeeeeent');
 			}
 		}
@@ -192,7 +208,8 @@ createApp({
 
 	mounted() {
 		//console.log(contacts[0].messages[0].message);
+		//contacts[activeUser].messages
 	}
-}).mount('#app')
+}).mount('#app') 
 
 
