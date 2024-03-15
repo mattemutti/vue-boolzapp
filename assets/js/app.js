@@ -228,8 +228,18 @@ createApp({
 			//console.log(nameSearch);
 			this.newSearch = nameSearch;
 			console.log(this.newSearch);
+		},
+		menuDelete(index) {
 
+			if (index[this.lastMessage].status === 'received' && this.lastMessage != 0) {
+				delete index[this.lastMessage].date;
+				delete index[this.lastMessage].message;
+				delete index[this.lastMessage].status;
+			}
 			
+			this.lastMessage--
+
+
 		}
 
 	},

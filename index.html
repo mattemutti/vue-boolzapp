@@ -53,7 +53,7 @@
                         <div class="box-src">
                             <i class="fa-solid fa-magnifying-glass" @click="search(newSearch)"></i>
                             <input class="form-search" type="text" name="search-in" id="search-in"
-                                placeholder="Cerca o inizia una nuova chat" v-model="newSearch"
+                                placeholder="Cerca o inizia una nuova chat" v-model.trim="newSearch"
                                 @keyup.enter="search(newSearch)">
                             <!-- <span>Cerca o inizia una nuova chat</span> -->
                         </div>
@@ -70,7 +70,8 @@
                                         <!-- user's photo -->
                                         <div class="column">
                                             <div class="name-user">{{contact.name}}</div>
-                                            <div class="txt-chat"><!-- {{contact.messages[1].message}} -->testo dell'ultimo messaggio</div>
+                                            <div class="txt-chat"><!-- {{contact.messages[1].message}} -->testo
+                                                dell'ultimo messaggio</div>
                                         </div>
                                         <!-- name contact end last message text -->
                                         <div class="hour-user"><!--{{contact.messages[1].date}} --> now</div>
@@ -79,14 +80,27 @@
                                 </li>
                             </div>
                             <div v-else>
-                                <div v-if="newSearch === contacts.name">
-                                    nome uguale
-                                    {{generatedUserMessage.name}}
+
+                                <div v-for="(contact, index ) in contacts">
+
+                                    <div v-if="contact.name === newSearch" @click="generateUserMessage(index)">
+                                        <div class="card-user">
+                                            <img class="photo-user" :src="'./assets/' + contact.avatar " alt="">
+                                            <!-- user's photo -->
+                                            <div class="column">
+                                                <div class="name-user">{{contact.name}}</div>
+                                                <div class="txt-chat"><!-- {{contact.messages[1].message}} -->testo
+                                                    dell'ultimo messaggio</div>
+                                            </div>
+                                            <!-- name contact end last message text -->
+                                            <div class="hour-user"><!--{{contact.messages[1].date}} --> now</div>
+                                            <!-- hour last sms -->
+                                        </div>
+                                    </div>
+                                    
+                                    
+
                                 </div>
-                                <div v_else>
-                                    nessun riscontro
-                                </div>
-                                
                             </div>
 
                         </ul>
@@ -143,8 +157,8 @@
                                     <ul class="menu">
                                         <li><a class="arrow-down" href="#"><i class="fa-solid fa-chevron-down"></i></a>
                                             <ul class="tendina">
-                                                <li><a class="td-n" href="#">Info messaggio</a></li>
-                                                <li><a class="td-n" href="#">Cancella messaggio</a></li>
+                                                <li><a class="td-n" href="#" >Info messaggio</a></li>
+                                                <li><a class="td-n" href="#" @click="menuDelete(generatedUserMessage.messages)">Cancella messaggio</a></li>
                                             </ul>
                                         </li>
                                     </ul>
