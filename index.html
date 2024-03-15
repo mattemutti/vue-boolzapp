@@ -90,32 +90,34 @@
                 <!-- contenitore principale right-->
                 <div class="box-r">
 
-                    <div class="contact">
+                    <div class="contact" v-if=" generatedUserMessage != null">
 
-                        <div class="info-user">
-
-                            <img class="photo-user " src="./assets/img/avatar_1.jpg" alt="">
-
-                            <div class="">
-                                <div class="">Michele</div>
-                                <div class="txt-chat-r">Ultimo accesso oggi alle 16.16</div>
+                            <div class="card-user">
+                                <img class="photo-user " :src="'./assets/' + generatedUserMessage.avatar " alt="">
+                                <div>
+                                    <div class="">{{generatedUserMessage.name}}</div>
+                                    <div class="txt-chat-r">{{generatedUserMessage.messages[0].date}}</div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="icon-user">
-                            <ul class="icons-r">
-                                <li class="icon-1"> <i class="fa-solid fa-magnifying-glass"></i> </li>
-                                <li class="icon-2"><i class="fa-solid fa-paperclip"></i></li>
-                                <li class="icon-3"><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                            </ul>
-                        </div>
+                            <div class="icon-user">
+                                <ul class="icons-r">
+                                    <li class="icon-1"> <i class="fa-solid fa-magnifying-glass"></i> </li>
+                                    <li class="icon-2"><i class="fa-solid fa-paperclip"></i></li>
+                                    <li class="icon-3"><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                                </ul>
+                            </div>
+
+                        
                     </div>
+
+                    <div v-else class="contact"></div>
                     <!-- /.info contact top -->
 
 
                     <div class="sms" v-if="generatedUserMessage != null">
 
-                        <template  v-for="message in generatedUserMessage.messages">
+                        <template v-for="message in generatedUserMessage.messages">
                             <div class="txt_sended send" v-if=" message.status === 'sent' ">
                                 {{message.message}}
                                 <div class="icon-sms">
@@ -124,21 +126,21 @@
                                 </div>
                             </div>
 
-                                <div v-else class="txt_recived recive">
-                                    {{message.message}}
-                                    <div class="icon-sms">
-                                        <ul class="menu">
-                                            <li><a class="arrow-down" href="#"><i class="fa-solid fa-chevron-down"></i></a>
-                                                <ul class="tendina">
-                                                    <li><a class="td-n" href="#">Info messaggio</a></li>
-                                                    <li><a class="td-n" href="#">Cancella messaggio</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <div>{{message.date}}</div>
-                                    </div>
+                            <div v-else class="txt_recived recive">
+                                {{message.message}}
+                                <div class="icon-sms">
+                                    <ul class="menu">
+                                        <li><a class="arrow-down" href="#"><i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="tendina">
+                                                <li><a class="td-n" href="#">Info messaggio</a></li>
+                                                <li><a class="td-n" href="#">Cancella messaggio</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div>{{message.date}}</div>
                                 </div>
-                            
+                            </div>
+
                         </template>
                     </div>
 

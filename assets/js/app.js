@@ -187,6 +187,8 @@ createApp({
 			//console.log(this.contacts[this.activeUser].messages[0].message);
 
 			this.generatedUserMessage = this.contacts[index];
+			console.log(this.generatedUserMessage);
+			
 		},
 		reedMessage() {
 			if (this.contacts[activeUser].messages[countMessage].status === 'sent') {
