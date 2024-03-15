@@ -170,6 +170,7 @@ const contacts = [
 // console.log(now);
 
 
+
 const { createApp } = Vue
 
 createApp({
@@ -182,6 +183,7 @@ createApp({
 			newMessage: '',
 			emptMessage: false,
 			newSearch: '',
+			lastMessage: null,
 		}
 	},
 
@@ -193,7 +195,9 @@ createApp({
 			//console.log(this.activeUser);
 			//console.log(this.contacts[this.activeUser].messages[0].message);
 			this.generatedUserMessage = this.contacts[index];
-			//console.log(this.generatedUserMessage);
+			console.log(this.generatedUserMessage);
+			this.lastMessage = contacts[index].messages.length - 1;
+			//console.log(this.lastMessage);
 
 		},
 		sendSms(userMessages) {
@@ -220,16 +224,20 @@ createApp({
 				this.newMessage = '';
 			}
 		},
-		search() {
-			//console.log('ricerca');
-			if()
+		search(nameSearch) {
+			//console.log(nameSearch);
+			this.newSearch = nameSearch;
+			console.log(this.newSearch);
+
 			
 		}
 
 	},
 
 	mounted() {
-		//console.log(contacts[0].messages[0].message);
+		//console.log(this.contacts.name);
+		// console.log(this.generatedUserMessage);
+
 		//contacts[activeUser].messages
 	}
 }).mount('#app')
