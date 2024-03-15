@@ -113,46 +113,37 @@
                     <!-- /.info contact top -->
 
 
-                    <div class="sms">
-                        <div class="send" v-if="generatedUserMessage != null">
-                            <div v-for="message in generatedUserMessage.messages">
-                                <div class="txt_sended">
-                                    {{message.message}}
-                                </div>
+                    <div class="sms" v-if="generatedUserMessage != null">
+
+                        <template  v-for="message in generatedUserMessage.messages">
+                            <div class="txt_sended send" v-if=" message.status === 'sent' ">
+                                {{message.message}}
                                 <div class="icon-sms">
                                     <i class="fa-solid fa-chevron-down"></i>
-                                    <!-- <div>{{contacts[activeUser].messages[countMessage].date}}</div> -->
+                                    {{message.date}}
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="recive">
-                            <div class="txt_recived">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum eum autem ipsam, nam
-                                saepe
-                                id dolorem repudiandae vel nulla pariatur libero suscipit commodi. Voluptatem sunt
-                                nostrum
-                                minus amet rerum eius.
-                            </div>
-                            <div class="icon-sms">
-                                <ul class="menu">
-                                    <li><a class="arrow-down" href="#"><i class="fa-solid fa-chevron-down"></i></a>
-                                        <ul class="tendina">
-                                            <li><a class="td-n" href="#">Info messaggio</a></li>
-                                            <li><a class="td-n" href="#">Cancella messaggio</a></li>
+                                <div v-else class="txt_recived recive">
+                                    {{message.message}}
+                                    <div class="icon-sms">
+                                        <ul class="menu">
+                                            <li><a class="arrow-down" href="#"><i class="fa-solid fa-chevron-down"></i></a>
+                                                <ul class="tendina">
+                                                    <li><a class="td-n" href="#">Info messaggio</a></li>
+                                                    <li><a class="td-n" href="#">Cancella messaggio</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
-                                    </li>
-                                </ul>
-
-
-                                <!-- Bonus riuscito -->
-
-                                <div>16.16</div>
-                            </div>
-                        </div>
-
+                                        <div>{{message.date}}</div>
+                                    </div>
+                                </div>
+                            
+                        </template>
                     </div>
-                    <!-- /.sms -->
+
+                    <div v-else class="sms"></div>
+                    <!-- /.sms box -->
 
                     <div class="digit">
                         <div class="icon-l"> <i class="fa-regular fa-face-smile"></i> </div>
