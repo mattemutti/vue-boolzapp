@@ -165,6 +165,10 @@ const contacts = [
 	}
 ]
 
+// var DateTime = luxon.DateTime;
+// const now = DateTime.now();
+// console.log(now);
+
 
 const { createApp } = Vue
 
@@ -177,6 +181,7 @@ createApp({
 			generatedUserMessage: null,
 			newMessage: '',
 			emptMessage: false,
+			newSearch: '',
 		}
 	},
 
@@ -197,7 +202,7 @@ createApp({
 			if (this.newMessage.length >= 1 && userMessages != null) {
 
 				userMessages.messages.push({
-					date: '10/01/2020 15:51:00',
+					date: 'now',
 					message: this.newMessage,
 					status: 'sent'
 				});
@@ -205,17 +210,20 @@ createApp({
 				console.log(userMessages);
 				setTimeout(() => {
 					userMessages.messages.push({
-						date: '10/01/2020 15:51:00',
+						date: 'now + 1s',
 						message: 'Ok',
 						status: 'received'
 					})
 				}, 1000)
-
 			}
 			else {
 				this.newMessage = '';
 			}
-
+		},
+		search() {
+			//console.log('ricerca');
+			if()
+			
 		}
 
 	},

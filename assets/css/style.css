@@ -175,13 +175,15 @@ Box Left
 .form-search {
     width: 100%;
 
-    >input {
+   
+}
+
+ input {
         width: 100%;
         padding: 0.5rem;
         border: none;
     }
-}
-
+    
 .users {
     background-color: var(--bapp-light);
     height: calc(100% - 210px);
