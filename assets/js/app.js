@@ -176,6 +176,7 @@ createApp({
 			activeUser: null,
 			generatedUserMessage: null,
 			newMessage: '',
+			emptMessage: false,
 		}
 	},
 
@@ -192,18 +193,26 @@ createApp({
 		},
 		sendSms(userMessages) {
 			console.log(this.newMessage);
-			userMessages.messages.push({
-				date: '10/01/2020 15:51:00',
-				message: this.newMessage,
-				status: 'sent'
-			})
-			console.log(userMessages);
-			setTimeout
-			userMessages.messages.push({
-				date: '10/01/2020 15:51:00',
-				message: 'Ok',
-				status: 'received'
-			})
+
+			if(this.newMessage.length >= 1 && userMessages != null) {
+
+				userMessages.messages.push({
+					date: '10/01/2020 15:51:00',
+					message: this.newMessage,
+					status: 'sent'
+				});
+				this.newMessage = '';
+				console.log(userMessages);
+				setTimeout
+				userMessages.messages.push({
+					date: '10/01/2020 15:51:00',
+					message: 'Ok',
+					status: 'received'
+				})
+			}
+			else {
+				this.newMessage = '';
+			}
 
 		}
 
