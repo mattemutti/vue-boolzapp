@@ -194,7 +194,7 @@ createApp({
 		sendSms(userMessages) {
 			console.log(this.newMessage);
 
-			if(this.newMessage.length >= 1 && userMessages != null) {
+			if (this.newMessage.length >= 1 && userMessages != null) {
 
 				userMessages.messages.push({
 					date: '10/01/2020 15:51:00',
@@ -203,12 +203,14 @@ createApp({
 				});
 				this.newMessage = '';
 				console.log(userMessages);
-				setTimeout
-				userMessages.messages.push({
-					date: '10/01/2020 15:51:00',
-					message: 'Ok',
-					status: 'received'
-				})
+				setTimeout(() => {
+					userMessages.messages.push({
+						date: '10/01/2020 15:51:00',
+						message: 'Ok',
+						status: 'received'
+					})
+				}, 1000)
+
 			}
 			else {
 				this.newMessage = '';
