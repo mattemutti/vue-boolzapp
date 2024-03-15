@@ -175,25 +175,36 @@ createApp({
 			countMessage: 0,
 			activeUser: null,
 			generatedUserMessage: null,
+			newMessage: '',
 		}
-	}, 
+	},
 
 	methods: {
 
 		generateUserMessage(index) {
-			console.log(this.contacts[index]);
+			//console.log(this.contacts[index]);
 			this.activeUser = index;
 			//console.log(this.activeUser);
 			//console.log(this.contacts[this.activeUser].messages[0].message);
-
 			this.generatedUserMessage = this.contacts[index];
-			console.log(this.generatedUserMessage);
-			
+			//console.log(this.generatedUserMessage);
+
 		},
-		reedMessage() {
-			if (this.contacts[activeUser].messages[countMessage].status === 'sent') {
-				console.log('seeeeeent');
-			}
+		sendSms(userMessages) {
+			console.log(this.newMessage);
+			userMessages.messages.push({
+				date: '10/01/2020 15:51:00',
+				message: this.newMessage,
+				status: 'sent'
+			})
+			console.log(userMessages);
+			setTimeout
+			userMessages.messages.push({
+				date: '10/01/2020 15:51:00',
+				message: 'Ok',
+				status: 'received'
+			})
+
 		}
 
 	},

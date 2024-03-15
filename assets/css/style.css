@@ -222,9 +222,7 @@ Box Right
         gap: 2rem;
 
 
-        &>div {
-            
-        }
+        &>div {}
 
         >.send {
             align-self: flex-end;
@@ -291,14 +289,15 @@ Box Right
             text-align: left;
             width: 85%;
 
-            >input {
-                width: 100%;
-                height: 100%;
-                border: none;
-                padding: 0.8rem;
-                border-radius: 0.5rem;
-            }
 
+        }
+
+        >input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 0.5rem;
         }
 
 
@@ -384,7 +383,7 @@ ul:hover .tendina {
 
 }
 
-.with100{
+.with100 {
     width: 100%;
 }
 

@@ -151,9 +151,9 @@
                         <div class="icon-l"> <i class="fa-regular fa-face-smile"></i> </div>
                         <!-- /.icon-l -->
 
-                        <form class="sms-write" action="" method="post">
-                            <input type="text" placeholder="Scrivi un messaggio">
-                        </form>
+                        
+                            <input class="sms-write" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendSms(generatedUserMessage)">
+                        
 
 
 
@@ -178,6 +178,7 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
 
 </body>
 
