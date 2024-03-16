@@ -54,7 +54,7 @@
                             <i class="fa-solid fa-magnifying-glass" @click="search(newSearch)"></i>
                             <input class="form-search" type="text" name="search-in" id="search-in"
                                 placeholder="Cerca o inizia una nuova chat" v-model.trim="newSearch"
-                                @keyup.enter="search(newSearch)">
+                                >
                             <!-- <span>Cerca o inizia una nuova chat</span> -->
                         </div>
                     </div>
@@ -79,11 +79,11 @@
                                     </div>
                                 </li>
                             </div>
+
                             <div v-else>
-
                                 <div v-for="(contact, index ) in contacts">
-
-                                    <div v-if="contact.name === newSearch" @click="generateUserMessage(index)">
+                                    <div v-if="contact.name.toLowerCase().trim() == newSearch.toLowerCase().trim()" @click="generateUserMessage(index)">
+                                        <!-- controllo del nome del utente -->
                                         <div class="card-user">
                                             <img class="photo-user" :src="'./assets/' + contact.avatar " alt="">
                                             <!-- user's photo -->
@@ -97,9 +97,6 @@
                                             <!-- hour last sms -->
                                         </div>
                                     </div>
-                                    
-                                    
-
                                 </div>
                             </div>
 
