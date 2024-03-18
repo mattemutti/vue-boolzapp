@@ -82,7 +82,7 @@
 
                             <div v-else>
                                 <div v-for="(contact, index ) in contacts">
-                                    <div v-if="contact.name.toLowerCase().trim() == newSearch.toLowerCase().trim()" @click="generateUserMessage(index)">
+                                    <div v-if="contact.name.toLowerCase().trim().includes(newSearch.toLowerCase().trim()) == true " @click="generateUserMessage(index)">
                                         <!-- controllo del nome del utente -->
                                         <div class="card-user">
                                             <img class="photo-user" :src="'./assets/' + contact.avatar " alt="">
